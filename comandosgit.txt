@@ -1,0 +1,85 @@
+// los comandos que estan acompa;ados por parentes es solo para decir que ay que poner un nombre sin los parentesis
+Comandos de git
+Inicializar git: git init
+Saber elestado de los archivos: git status.
+Agregar todos los cambios echos a los archivos a git: git add . 
+Agregar cambios echos a un solo archivo: git add (nombre del archivo.txcion).
+Para remover los cambios echos: git restore (nombre del archivo).
+Remueve los cambios de la cache: git rm --cached (nombre del archivo).
+Subir los cambios despues de agregados: git commit -m "mensaje" con el -m podemos agregar un mensaje.
+Agregar el correo a git: git config --global user.email "jesusnn11@gmail.com".
+Agregar el nombre a git: git config --global user.name "jesus nolasco".
+Ver la configuracion de git: git config.
+Para ver el contenido del archivo en la linea de comando: git cat (nombre del archivo).
+Para ver el historial de los cambios que se le an echos: git log (nombre del archivo).
+Para ver los cambios echos en un archivo usamos: git show (nombre archivo).
+Si damos un commit al proyecto sin un msj nos saldra una pantalla para agregarlo despues de agregarlo precionamos: Esc + Shift + zz y se agrega el msj.
+Para comparar dosversiones del proyecto mediante el id: git diff.
+Para volver a una version anterior usamos: git reset (la version que queremos) --heard y todo se borra asta esa version.
+Tambien podemos usar para volver a una version: git (version) --soft pero aqui no se borra todo lo anterior.
+Para ver los cambios guardados y los que aun no lo estan uso: git diff.
+Para ver como era un archivo anterior: git checkout (id del commit) (nombre del archivo). ojo si ago un commit guardo lo que tenga este archivo y lo abanzado se borra-
+-para volver a la version reciente usamos: git checkout master.
+Para clonar un repositorio usamos: git clone (url del repositorio).
+Despues de hacer git add y git commit debemos hacer: git push. para mandar loscambios al servidor.
+Usamos para traer actualizaciones del servidor remoto y guardarlas en nuestro repositorio local: git fetch
+Usamos el comando: git merge. con servidores remotos. Lo necesitamos para combinar los últimos cambios del servidor remoto y nuestro directorio de trabajo.
+Básicamente, git fetch y git merge al mismo tiempo en un solo comando que es: git pull.
+git log --oneline:Te muestra el id commit y el título del commit.
+git log --decorate: Te muestra donde se encuentra el head point en el log.
+git log --stat: Explica el número de líneas que se cambiaron brevemente.
+git log -p: Explica el número de líneas que se cambiaron y te muestra que se cambió en el contenido.
+git shortlog: Indica que commits ha realizado un usuario, mostrando el usuario y el título de sus commits.
+git log --graph --oneline --decorate y
+git log --pretty=format:"%cn hizo un commit %h el dia %cd": Muestra mensajes personalizados de los commits.
+git log -3: Limitamos el número de commits.
+git log --after=“2018-1-2”
+git log --after=“today” y
+git log --after=“2018-1-2” --before=“today”: Commits para localizar por fechas.
+git log --author=“Name Author”: Commits hechos por autor que cumplan exactamente con el nombre.
+git log --grep=“INVIE”: Busca los commits que cumplan tal cual está escrito entre las comillas.
+git log --grep=“INVIE” –i: Busca los commits que cumplan sin importar mayúsculas o minúsculas.
+git log – index.html: Busca los commits en un archivo en específico.
+git log -S “Por contenido”: Buscar los commits con el contenido dentro del archivo.
+git log > log.txt: guardar los logs en un archivo txt
+git branch -nombre de la rama-: Con este comando se genera una nueva rama.
+git checkout -nombre de la rama-: Con este comando puedes saltar de una rama a otra.
+git checkout -b rama: Genera una rama y nos mueve a ella automáticamente, Es decir, es la combinación de git brach y git checkout al mismo tiempo.
+git reset id-commit: Nos lleva a cualquier commit no importa la rama, ya que identificamos el id del tag., eliminando el historial de los commit posteriores al tag seleccionado.
+git checkout rama-o-id-commit: Nos lleva a cualquier commit sin borrar los commit posteriores al tag seleccionado.
+
+Comandos básicos de GitHub
+git init: crear un repositorio.
+git add: agregar un archivo a staging.
+git commit -m “mensaje”: guardar el archivo en git con un mensaje.
+git branch: crear una nueva rama.
+git checkout: moverse entre ramas.
+git push: mandar cambios a un servidor remoto.
+git fetch: traer actualizaciones del servidor remoto y guardarlas en nuestro repositorio local.
+git merge: tiene dos usos. Uno es la fusión de ramas, funcionando como un commit en la rama actual, trayendo la rama indicada. Su otro uso es guardar los cambios de un servidor remoto en nuestro directorio.
+git pull: fetch y merge al mismo tiempo.
+
+Comandos para corrección en GitHub
+git checkout “codigo de version” “nombre del archivo”: volver a la última versión de la que se ha hecho commit.
+git reset: vuelve al pasado sin posibilidad de volver al futuro, se debe usar con especificaciones.
+git reset --soft: vuelve a la versión en el repositorio, pero guarda los cambios en staging. Así, podemos aplicar actualizaciones a un nuevo commit.
+git reset --hard: todo vuelve a su versión anterior
+git reset HEAD: saca los cambios de staging, pero no los borra. Es lo opuesto a git add.
+git rm: elimina los archivos, pero no su historial. Si queremos recuperar algo, solo hay que regresar. se utiliza así:
+git rm --cached elimina los archivos en staging pero los mantiene en el disco duro.
+git rm --force elimina los archivos de git y del disco duro.
+
+Comandos para revisión y comparación en GitHub
+git status: estado de archivos en el repositorio.
+git log: historia entera del archivo.
+git log --stat: cambios específicos en el archivo a partir de un commit.
+git show: cambios históricos y específicos hechos en un archivo.
+git diff “codigo de version 1” “codigo de version 2”: comparar cambios entre versiones.
+git diff: comparar directorio con staging.
+--------------------------------------
+Si nos hemos equivocado y queremos cancelar el merge, debemos usar el siguiente comando: git merge --abort.
+Para traer los datos y fusionarlos a la vez, en un solo comando, se usa git pull.
+­- Para crear commits rápidamente, fusionando git add y git commit -m "", usamos git commit -am "".
+­- Para generar nuevas ramas, hay que posicionarse sobre la rama que se desea copiar y utilizar el comando git branch <nombre>.
+Para saltar entre ramas, se usa el comando git checkout <branch>
+­- Una vez realizado los cambios en la rama, estas deben fusionarse con git merge.
